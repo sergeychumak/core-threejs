@@ -11,8 +11,8 @@ export class StatsClass {
     this.statsMB = new Stats()
 
     this.init([
-      this.statsFPS, 
-      this.statsMS, 
+      this.statsFPS,
+      this.statsMS,
       this.statsMB
     ])
   }
@@ -21,7 +21,7 @@ export class StatsClass {
     const offsetStep = 90
     let offset = 20
     stats.forEach((statsElement: Stats, index: number) => {
-      offset =+ offsetStep * index
+      offset = offset + (index === 0 ? 0 : offsetStep)
       statsElement.showPanel(index)
       statsElement.dom.style.cssText = `position:absolute;bottom:20px;left:${offset}px;z-index: 999`
     })
