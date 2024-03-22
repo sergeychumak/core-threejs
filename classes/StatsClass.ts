@@ -21,7 +21,7 @@ export class StatsClass {
     const offsetStep = 90
     let offset = 20
     stats.forEach((statsElement: Stats, index: number) => {
-      offset = offset + offsetStep * index
+      offset =+ offsetStep * index
       statsElement.showPanel(index)
       statsElement.dom.style.cssText = `position:absolute;bottom:20px;left:${offset}px;z-index: 999`
     })
